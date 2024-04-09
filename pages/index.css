@@ -12,3 +12,9 @@
   margin-top: 45px;
   max-width: 880px;
 }
+
+.profile {
+  display: flex;
+  align-items: center;
+  padding-top: 42px;
+}
