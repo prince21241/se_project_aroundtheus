@@ -26,6 +26,12 @@
   padding-top: 40px;
 }
 
+.profile__title {
+  font-size: 36px;
+  line-height: 1.2;
+  max-width: 300px;
+}
+
 .profile__info {
   display: grid;
   grid-template-areas:
