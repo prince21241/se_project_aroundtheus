@@ -26,10 +26,16 @@
 
 .card__description {
   display: flex;
-  justify-content: space-between;
-  padding: 25px 20px;
+  background-color: white;
+  color: black;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
   align-items: center;
-  background-color: #ffffff;
+  justify-content: space-between;
+  border-bottom-left-radius: 10px 10px;
+  border-bottom-right-radius: 10px 10px;
 }
 
 .card__title {
