@@ -2,23 +2,23 @@
   background-color: black;
   color: white;
 }
-
 .page__section {
   max-width: 880px;
   width: 100%;
   position: relative;
-  margin: 0 auto;
+  margin: auto;
 }
-
 .page__content {
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: 0 auto;
+  max-width: 880px;
 }
 
-@media screen and (max-width: 880px) {
-  .page__section {
-    display: flex;
-    margin: auto;
+@media screen and (max-width: 320px) {
+  .page__content {
+    padding: 0;
   }
 }
