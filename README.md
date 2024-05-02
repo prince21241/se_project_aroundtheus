@@ -2,6 +2,19 @@
 
 ### Overview
 
+Project features
+-Semantic HTML5
+-Flexbox/Grid layout
+-Responsive design via media queries
+-Flat BEM structure
+-Card elements and images rendered through Javascript using element
+-Interactive modal boxes for editing profile information, adding new card elements, and viewing a "preview" popup of card image when clicked on
+-API fetch requests to project server
+-Smooth transition for opening/closing modals
+-Modals close by clicking on the overlay or pressing "Esc"
+-Form validation using Javascript class components
+-Utilizes webpack
+
 -Photos
 -Video
 -Interactive Website
