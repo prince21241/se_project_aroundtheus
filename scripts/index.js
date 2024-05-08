@@ -41,7 +41,7 @@ const cardTemplate =
 const cardListEl = document.querySelector(".cards__list");
 
 /*Functions*/
-function closePopop(u) {
+function closePopup() {
   profileEditModal.classList.remove("modal_opened");
 }
 
@@ -61,7 +61,7 @@ function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-  closePopop();
+  closePopup();
 }
 
 initialCards.forEach((cardData) => {
@@ -78,6 +78,6 @@ profileEditButton.addEventListener("click", () => {
   profileEditModal.classList.add("modal_opened");
 });
 
-profileCloseButton.addEventListener("click", closePopop);
+profileCloseButton.addEventListener("click", closePopup);
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
