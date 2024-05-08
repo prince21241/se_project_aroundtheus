@@ -41,7 +41,7 @@ const cardTemplate =
 const cardListEl = document.querySelector(".cards__list");
 
 /*Functions*/
-function closePopop() {
+function closePopop(u) {
   profileEditModal.classList.remove("modal_opened");
 }
 
