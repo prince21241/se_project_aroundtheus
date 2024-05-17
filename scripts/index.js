@@ -27,7 +27,7 @@ const initialCards = [
 
 /*Elements*/
 const profileEditButton = document.querySelector("#profile-edit-button");
-const profileEditModal = document.querySelector("#profile-edit-modal");
+const profileEditModal = document.querySelector("#edit-modal");
 const profileCloseButton = document.querySelector("#modal-close-button");
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
@@ -39,6 +39,7 @@ const profileEditForm = profileEditModal.querySelector(".modal__form");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 const cardListEl = document.querySelector(".cards__list");
+const addNewCardButton = document.querySelector(".profile__add-button");
 
 /*Functions*/
 function closePopup() {
