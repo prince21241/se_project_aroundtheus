@@ -90,3 +90,4 @@ profileAddButton.addEventListener("click", () => {
 profileCloseButton.addEventListener("click", closePopup);
 newCardCloseButton.addEventListener("click", closePopup);
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
+``;
