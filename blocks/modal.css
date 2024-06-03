@@ -28,6 +28,14 @@
   color: black;
 }
 
+.modal__input-error_active {
+  background-color: red;
+  color: white;
+  border: 1px solid red;
+  padding: 5px;
+  border-radius: 3px;
+}
+
 .modal__description {
   max-width: 358px;
   padding-top: 30px;
