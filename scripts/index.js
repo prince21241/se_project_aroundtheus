@@ -148,29 +148,3 @@ initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 /* -------------------------------------------------------------------------- */
 /*                               Form Validation                              */
 /* -------------------------------------------------------------------------- */
-
-const validationSettings = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__Input",
-  submitButtonSelector: ".modal__button",
-  inputErrorClass: "modal__input-error",
-  inactiveButtonClass: "modal__button-disabled",
-  errorclass: "modal__error",
-};
-
-const editFormElement = profileEditModal.querySelector(".modal__form");
-const addFormElement = addCardModal.querySelector(".modal__form");
-
-addNewCardbutton.addEventListener("click", () => {
-  profileDescriptionInput.value = profileDescription.textContent;
-  openPopup(profileAddmodal);
-});
-
-closeButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const popup = button.closest(".modal");
-    closePopup(popup);
-  });
-});
-
-initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
