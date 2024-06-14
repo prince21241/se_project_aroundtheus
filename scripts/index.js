@@ -1,3 +1,5 @@
+import Card from "./Card";
+
 const initialCards = [
   {
     name: "Yosemite Vallye",
@@ -25,6 +27,14 @@ const initialCards = [
   },
 ];
 
+const cardData = {
+  name: "Yosemite Vallye"
+  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+};
+
+const Card = new Card(cardData);
+
+//Template
 const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
