@@ -35,9 +35,6 @@ const cardData = {
 
 console.log(initialCards);
 
-const card = new Card(cardData, "#card-template");
-card.getView();
-
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileCloseModal = profileEditModal.querySelector(
