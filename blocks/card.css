@@ -31,7 +31,7 @@
 }
 
 .card__like-button {
-  background: transparent url(../images/like-image-2.svg) center no-repeat;
+  background: transparent url(../images/like\ button.svg) center no-repeat;
 
   height: 18px;
   width: 21px;
@@ -41,14 +41,14 @@
 }
 
 .card__like-button_active {
-  background-image: url(../images/Active-heart.svg);
+  background-image: url(../images/like-active.svg);
 }
 .card__like-button:hover {
   opacity: 0.6;
 }
 
 .card__trash-button {
-  background: transparent url(../images/trashcan.svg) center no-repeat;
+  background: transparent url(../images/Trash.svg) center no-repeat;
   position: relative;
   cursor: pointer;
   padding: 0;
