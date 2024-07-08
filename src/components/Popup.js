@@ -1,37 +1,31 @@
-export default class PopUp {
+export default class Popup {
   constructor({ popupSelector }) {
-    this._popUpElement = document.querySelector(popupSelector);
-    this._closeButton = this._popUpElement.querySelector(".modal__close");
-    this.close = this.close.bind(this);
+    this._popupElement = document.querySelector(popupSelector);
   }
 
   open() {
-    this._popUpElement.classList.add("modal_opened");
-    document.addEventListener("keydown", this._handleEscapeKey);
-    document.addEventListener("mousedown", this._handleOutsideClick);
+    this._popupElement.classList.add("modal_opened");
+    document.addEventListener("keydown", this._handleEcsClose);
   }
-
   close() {
-    this._popUpElement.classList.remove("modal_opened");
-    document.removeEventListener("keydown", this._handleEscapeKey);
-    document.removeEventListener("mousedown", this._handleOutsideClick);
+    this._popupElement.classList.remove("modal_opened");
+    document.removeEventListener("keydown", this._handleEcsClose);
   }
-
-  _handleEscapeKey = (evt) => {
+  _handleEcsClose = (evt) => {
     if (evt.key === "Escape") {
       this.close();
     }
   };
-
-  _handleOutsideClick = (evt) => {
-    if (evt.target.classList.contains("modal")) {
-      this.close();
-    }
-  };
-
   setEventListeners() {
-    this._closeButton.addEventListener("click", () => {
-      this.close();
+    this._popupElement
+      .querySelector("#modal-close-button")
+      .addEventListener("click", () => {
+        this.close();
+      });
+    this._popupElement.addEventListener("click", (evt) => {
+      if (evt.target === evt.currentTarget) {
+        this.close();
+      }
     });
   }
 }

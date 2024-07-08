@@ -1,35 +1,33 @@
-import PopUp from "./PopUp.js";
+import Popup from "./Popup.js";
 
-export default class PopUpWithForm extends PopUp {
-  constructor(popupSelector, handleFormSubmit, config) {
+export default class PopupWithForm extends Popup {
+  constructor({ popupSelector, handleFormSubmit }) {
     super({ popupSelector });
-    this._popup = document.querySelector(popupSelector);
+    this._popupForm = this._popupElement.querySelector(".modal__form");
+    this._popupInputs = this._popupForm.querySelectorAll(".modal__input");
     this._handleFormSubmit = handleFormSubmit;
-    this._config = config;
-    this._form = this._popup.querySelector(this._config.formSelector);
-    this.inputEl = this._popUpElement.querySelectorAll(".modal__input");
-    this.inputValues = document.querySelectorAll(this._config.inputSelector);
-  }
-
-  setEventListeners() {
-    super.setEventListeners();
-    this._form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      this._handleFormSubmit(this._getInputValues());
-    });
   }
 
   _getInputValues() {
-    this.inputValues = {};
-    this.inputEl.forEach((input) => {
-      this.inputValues[input.name] = input.value;
+    const formValues = {};
+    this._popupInputs.forEach((input) => {
+      formValues[input.name] = input.value;
     });
-    return this.inputValues;
+
+    return formValues;
   }
 
-  setInputValues(data) {
-    this.inputValues.forEach((input) => {
+  _setInputValues(data) {
+    this._inputList.forEach((input) => {
       input.value = data[input.name];
     });
+  }
+  setEventListeners() {
+    this._popupForm.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+      //this._popupForm.reset();
+      this._handleFormSubmit(this._getInputValues());
+    });
+    super.setEventListeners();
   }
 }

@@ -1,56 +1,57 @@
-class Card {
-  constructor(cardData, cardSelector, handlePreviewPicture) {
+export default class Card {
+  constructor({ name, link }, cardSelector, handleImageClick) {
+    this._name = name;
+    this._link = link;
     this._cardSelector = cardSelector;
-    this._name = cardData.name;
-    this._link = cardData.link;
-    this._handlePreviewPicture = handlePreviewPicture;
+    this._handleImageClick = handleImageClick;
   }
-
-  _setEventListeners() {
-    this._cardElement
-      .querySelector(".card__like-button")
-      .addEventListener("click", () => {
-        this._handleLikeButton();
-      });
-    this._cardElement
-      .querySelector(".card__trash-button")
-      .addEventListener("click", () => {
-        this._handleTrashButton();
-      });
-    this._cardImageEl.addEventListener("click", () => {
-      this._handlePreviewPicture({ name: this._name, link: this._link });
-    });
-  }
-
-  _handleLikeButton = () => {
-    this._cardElement
-      .querySelector(".card__like-button")
-      .classList.toggle("card__like-button_active");
-  };
-
-  _handleTrashButton = () => {
-    this._cardElement.remove();
-  };
-
+  /* ------------------------------ _getTemplate ------------------------------ */
   _getTemplate() {
-    return document
+    this._cardElement = document
       .querySelector(this._cardSelector)
       .content.querySelector(".card")
       .cloneNode(true);
+    return this._cardElement;
   }
-  getView() {
+
+  /* --------------------------- _setEventListeners --------------------------- */
+  _setEventListeners() {
+    //like button
+    this._likeButton = this._cardElement.querySelector(".card__like");
+    this._likeButton.addEventListener("click", () => {
+      this._handleLikeButton();
+    });
+    //trash
+    this._cardElement
+      .querySelector(".card__trash")
+      .addEventListener("click", () => {
+        this._handleTrashButton();
+      });
+
+    //exhibit
+    this._imageElement.addEventListener("click", () => {
+      this._handleImageClick(this._name, this._link);
+    });
+  }
+
+  /* --------------------------------- Handler -------------------------------- */
+  _handleLikeButton() {
+    this._likeButton.classList.toggle("card__like_active");
+  }
+  _handleTrashButton() {
+    this._cardElement.remove();
+    this._cardElement = null;
+  }
+
+  /* ------------------------------ generateCard ------------------------------ */
+  generateCard() {
     this._cardElement = this._getTemplate();
-
-    this._cardImageEl = this._cardElement.querySelector(".card__image");
-    this._cardTitle = this._cardElement.querySelector(".card__title");
-    this._cardImageEl.src = this._link;
-    this._cardImageEl.alt = this._name;
-    this._cardTitle.textContent = this._name;
-
+    this._imageElement = this._cardElement.querySelector(".card__image");
+    this._imageElement.src = this._link;
+    this._imageElement.alt = this._name;
+    this._cardElement.querySelector(".card__name").textContent = this._name;
     this._setEventListeners();
 
     return this._cardElement;
   }
 }
-
-export default Card;
