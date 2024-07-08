@@ -3,29 +3,38 @@ export default class Popup {
     this._popupElement = document.querySelector(popupSelector);
   }
 
-  open() {
-    this._popupElement.classList.add("modal_opened");
-    document.addEventListener("keydown", this._handleEcsClose);
+  openPopup() {
+    console.log("opening with class");
+    this._popupElement.classList.add("modal_open");
+    document.addEventListener("keydown", this._handleEscClose);
   }
-  close() {
-    this._popupElement.classList.remove("modal_opened");
-    document.removeEventListener("keydown", this._handleEcsClose);
+
+  closePopup() {
+    this._popupElement.classList.remove("modal_open");
+    document.removeEventListener("keydown", this._handleEscClose);
   }
-  _handleEcsClose = (evt) => {
-    if (evt.key === "Escape") {
-      this.close();
-    }
-  };
+
   setEventListeners() {
-    this._popupElement
-      .querySelector("#modal-close-button")
-      .addEventListener("click", () => {
-        this.close();
-      });
+    //handle closing modal by clicking close button
+    const closeButton = this._popupElement.querySelector(".modal__close");
+    closeButton.addEventListener("click", () => {
+      console.log("Closed with Close button");
+      this.closePopup();
+    });
+    //handles closing by clicking overlay
     this._popupElement.addEventListener("click", (evt) => {
-      if (evt.target === evt.currentTarget) {
-        this.close();
+      if (evt.target === this._popupElement) {
+        console.log("Closed By Overlay Click");
+        this.closePopup();
       }
     });
   }
+
+  _handleEscClose = (evt) => {
+    //use a named function expression to allow removeEventListener to reference the method
+    if (evt.key === "Escape") {
+      console.log("ESC");
+      this.closePopup();
+    }
+  };
 }
