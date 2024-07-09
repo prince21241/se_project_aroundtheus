@@ -1,65 +1,66 @@
 .card {
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
+  width: 282px;
+  background-color: white;
   border-radius: 10px;
-  overflow: hidden;
+  position: relative;
 }
+
 .card__image {
   width: 282px;
   height: 282px;
-  object-fit: cover;
+  object-fit: fill;
+  margin: 0;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
 }
+
+.card__trash {
+  width: 18px;
+  height: 19.3px;
+  background: transparent url("../images/Trash.svg") center no-repeat;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.card__trash:hover {
+  opacity: 60%;
+}
+
 .card__description {
   display: flex;
-  background-color: #fff;
-  padding: 25px 20px 25px 20px;
-  align-items: center;
+  padding: 25px 20px;
   justify-content: space-between;
+  align-items: center;
 }
-.card__title {
-  color: black;
+
+.card__name {
+  width: 219px;
+  font-weight: 900;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 24px;
+  line-height: 29.05px;
   margin: 0;
+  color: #000;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-family: Inter, Arial, Helvetica, sans-serif;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 29px;
-  max-width: 220px;
 }
 
-.card__like-button {
-  background: transparent url(../images/like\ button.svg) center no-repeat;
-
-  height: 18px;
+.card__like {
   width: 21px;
-  border-style: none;
-
+  height: 18px;
+  background: transparent url("../images/heart.svg") center no-repeat;
+  border-width: 0;
   cursor: pointer;
 }
 
-.card__like-button_active {
-  background-image: url(../images/like-active.svg);
-}
-.card__like-button:hover {
-  opacity: 0.6;
+.card__like_active {
+  background-image: url("../images/heart_active.svg");
 }
 
-.card__trash-button {
-  background: transparent url(../images/Trash.svg) center no-repeat;
-  position: relative;
-  cursor: pointer;
-  padding: 0;
-  width: 18px;
-  box-sizing: border-box;
-  height: 19.3px;
-  top: 36px;
-  left: 249px;
-  border: none;
-}
-
-.card__trash-button:hover {
-  opacity: 0.6;
+.card__like:hover {
+  opacity: 50%;
 }
