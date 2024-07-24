@@ -1,3 +1,7 @@
+# Project 3: Around The U.S.
+
+### Overview
+
 Project features
 -Semantic HTML5
 -Flexbox/Grid layout

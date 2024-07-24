@@ -1,23 +1,17 @@
 export default class UserInfo {
-  constructor({ titleSelector, descriptionSelector, profileImage }) {
-    this._titleElement = document.querySelector(titleSelector);
-    this._descriptionElement = document.querySelector(descriptionSelector);
-    this._imageElement = document.querySelector(profileImage);
+  constructor(nameSelector, descriptionSelector) {
+    this._nameElement = document.querySelector(nameSelector);
+    this._jobElement = document.querySelector(descriptionSelector);
   }
 
   getUserInfo() {
     return {
-      name: this._titleElement.textContent,
-      about: this._descriptionElement.textContent,
+      name: this._nameElement.textContent,
+      job: this._jobElement.textContent,
     };
   }
-
-  setUserInfo(inputValues) {
-    this._titleElement.textContent = inputValues.name;
-
-    this._descriptionElement.textContent = inputValues.about;
-  }
-  setProfileImage(image) {
-    this._imageElement.src = image.avatar;
+  setUserInfo(userData) {
+    this._nameElement.textContent = userData.name;
+    this._jobElement.textContent = userData.description;
   }
 }
