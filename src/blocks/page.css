@@ -1,6 +1,8 @@
 .page {
   background-color: black;
   color: white;
+  font-family: Inter, Arial, sans-serif;
+  padding: 45px 15.625vw 60px;
 }
 
 .page__section {
@@ -14,4 +16,22 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding: 0 10px;
+}
+
+@media screen and (min-width: 621px) and (max-width: 900px) {
+  .page {
+    padding: 45px 20px 60px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 620px) {
+  .page {
+    padding: 0;
+  }
+
+  .page__content {
+    padding: 0;
+    margin: 0;
+  }
 }
