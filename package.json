@@ -10,7 +10,7 @@
     "deploy": "gh-pages -d dist"
   },
   "keywords": [],
-  "author": "Elise Bouer",
+  "author": "Prince Raval",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "7.18.9",
