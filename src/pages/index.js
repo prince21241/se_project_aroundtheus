@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/*                                   Import                                   */
+/* -------------------------------------------------------------------------- */
+
 import Api from "../components/Api.js";
 import { config } from "../utils/constants.js";
 import { initialCards } from "../utils/constants.js";
@@ -9,6 +13,10 @@ import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import "../pages/index.css";
 import PopupDeleteCard from "../components/PopupDeleteCard.js";
+
+/* -------------------------------------------------------------------------- */
+/*                                 used const                                 */
+/* -------------------------------------------------------------------------- */
 
 const profileImageEditButton = document.getElementById("avatar-button");
 const profileEditButton = document.getElementById("profile-edit-button");
